@@ -1,0 +1,18 @@
+-- 2. I want to know the average salary per title.
+
+select avg(s.salary) as 'Average Salary', t.title as 'Title'
+from salaries s 
+inner join titles t on s.emp_no = t.emp_no 
+group by t.title 
+
+
+Results
+|Average Salary|Title             |
+|--------------|------------------|
+|60543.2191    |Senior Engineer   |
+|69308.7124    |Staff             |
+|59508.1277    |Engineer          |
+|70470.5013    |Senior Staff      |
+|59304.9863    |Assistant Engineer|
+|59294.3742    |Technique Leader  |
+|66924.2706    |Manager           |

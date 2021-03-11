@@ -1,0 +1,13 @@
+-- 3. How much money was spent on salary for the marketing department between the years 1990 and 1992?
+
+select sum(s.salary), d.dept_name
+from salaries s 
+inner join dept_emp de on s.emp_no = de.emp_no 
+inner join departments d on d.dept_no = de.dept_no 
+where d.dept_name = 'Marketing'
+and year(s.from_date) <= 1992 and year(s.to_date) >= 1990
+
+Results
+|sum(s.salary)|dept_name|
+|-------------|---------|
+|2183459752   |Marketing|

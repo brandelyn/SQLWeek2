@@ -1,0 +1,19 @@
+-- 1. I want to know how many employees with each title were born after 1965-01-01.
+
+select count(*) as number_born, t.title
+from employees e 
+inner join titles t on t.emp_no = e.emp_no 
+where e.birth_date > '1965-01-01'
+group by t.title 
+
+
+Results
+
+|number_born|title             |
+|-----------|------------------|
+|612        |Senior Staff      |
+|703        |Staff             |
+|95         |Technique Leader  |
+|589        |Senior Engineer   |
+|657        |Engineer          |
+|97         |Assistant Engineer|
